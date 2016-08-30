@@ -1,4 +1,5 @@
 import _debug from 'debug'
+import path from 'path'
 import webpack from 'webpack'
 import webpackDevMiddleware from './middleware/webpack-dev'
 import webpackHMRMiddleware from './middleware/webpack-hmr'
@@ -27,6 +28,7 @@ if (config.env === 'production') {
 
   app.use(webpackDevMiddleware(compiler, webpackConfig.output.publicPath))
   app.use(webpackHMRMiddleware(compiler))
+  app.use(serve(path.resolve(__dirname, '../client')))
 }
 
 export default app
