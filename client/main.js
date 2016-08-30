@@ -1,5 +1,6 @@
 import * as THREE from 'three'
 import config from '../config'
+import './styles/main.scss'
 
 
 const scene = new THREE.Scene()
