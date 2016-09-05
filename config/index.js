@@ -4,7 +4,7 @@ import production from './production'
 
 let config = {
   env: process.env.NODE_ENV || 'development',
-  port: process.env.PORT || 4000
+  port: process.env.PORT || 3000
 }
 
 if (config.env === 'production') {

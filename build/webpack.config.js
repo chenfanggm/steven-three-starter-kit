@@ -7,15 +7,9 @@ import config from '../config'
 
 
 const __DEV__ = (config.env === 'development')
-const entryPath = ['babel-polyfill', './client/main.js']
 
 const webpackConfig = {
   devtool: 'source-map',
-  output: {
-    filename: `[name].[hash].js`,
-    path: path.resolve(__dirname, '../dist'),
-    publicPath: '/'
-  },
   module: {
     loaders: [
       {
@@ -49,10 +43,17 @@ const webpackConfig = {
   }
 }
 
+const entryPath = ['babel-polyfill', './client/main.js']
 webpackConfig.entry = {
   app: __DEV__ ? [
     'webpack-hot-middleware/client?path=/__webpack_hmr'
   ].concat(entryPath) : entryPath
+}
+
+webpackConfig.output = {
+  filename: `[name].[hash].js`,
+    path: path.resolve(__dirname, '../dist'),
+    publicPath: '/'
 }
 
 webpackConfig.plugins = [

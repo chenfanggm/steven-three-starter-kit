@@ -1,4 +1,4 @@
-export default ({
+export default {
   env: 'development',
-  port: 4000
-})
+  port: 3000
+}
