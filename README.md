@@ -12,4 +12,5 @@ npm run dev  // visit: http://localhost:3000
 # Start Coding
 Modify ***(your_repo_dir)/client/main.js*** while the server is running, and watch the hot-reloaded change ocuurs in browser: http://localhost:3000
 
-# Enjoy!
+# Thanks:
+* https://github.com/davezuko/react-redux-starter-kit
