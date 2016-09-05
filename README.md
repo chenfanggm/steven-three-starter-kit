@@ -19,5 +19,5 @@ Modify ***(your_repo_dir)/client/main.js*** while the server is running, and wat
 * https://github.com/davezuko/react-redux-starter-kit
 * http://threejs.org/
 
-＃ About Author
+# About Author
 My name is [Chen Fang](https://chenfang.me/), a humble Full-Stack Software Engineer.
