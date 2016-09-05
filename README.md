@@ -1,5 +1,5 @@
-# Steven Three Starter Kit
-This starter kit provide a convenient **hot-reload** nodejs server that help new [Three.js](https://http://threejs.org/) developer to start learning WebGL quickly and easily, without having any distractions from setting up a whole dev environment.
+# Steven Three.js Starter Kit
+This starter kit provide a convenient **hot-module-replace** nodejs server that help new [Three.js](https://http://threejs.org/) developer to start learning WebGL quickly and easily, without having any distractions from setting up a whole dev environment.
 
 # Install
 * Clone this repo, and navigate to the directory
