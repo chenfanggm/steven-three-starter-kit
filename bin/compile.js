@@ -13,7 +13,7 @@ const debug = _debug('app:bin:compile')
     const stats = await webpackCompiler(webpackConfig)
     console.log('stats', stats)
     debug('Copy static assets to dist folder.')
-    fs.copySync(path.resolve(__dirname, '../client/static'), path.resolve(__dirname, '../dist'))
+    fs.copySync(path.resolve(__dirname, '../client/static'), path.resolve(__dirname, '../dist/static'))
   } catch (e) {
     debug('Compiler encountered an error.', e)
     process.exit(1)

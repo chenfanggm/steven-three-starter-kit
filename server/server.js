@@ -1,4 +1,3 @@
-import _debug from 'debug'
 import path from 'path'
 import webpack from 'webpack'
 import webpackDevMiddleware from './middleware/webpack-dev'
@@ -10,7 +9,6 @@ import Router from 'koa-router'
 import config from '../config'
 
 
-const debug = _debug('app:server')
 const app = new Koa()
 const router = new Router()
 /**
