@@ -20,4 +20,4 @@ Modify ***(your_repo_dir)/client/main.js*** while the server is running, and wat
 * http://threejs.org/
 
 # Author
-My name is [Chen Fang](https://chenfang.me/), a humble Full-Stack Software Engineer.
+My name is [Chen Fang](https://chen-fang.com/), a humble Full-Stack Software Engineer.
