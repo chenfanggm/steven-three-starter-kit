@@ -7,7 +7,7 @@ import config from '../../config'
 
 const debug = _debug('app:server:webpack-dev')
 
-export default function (compiler, publicPath) {
+export default (compiler, publicPath) => {
   debug('Enable webpack dev middleware.')
 
   const middleware = WebpackDevMiddleware(compiler, {
