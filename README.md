@@ -6,9 +6,8 @@ This starter kit provide a convenient **hot-module-replace** nodejs server that 
 * Run command: ```npm install```
 
 # Run Server
+run following CMD in the repo root, then visit: http://localhost:3000
 ```
-// run following CMD in the repo root
-// then visit: http://localhost:3000
 npm run dev  
 ```
 # Start Coding
