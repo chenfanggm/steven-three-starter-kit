@@ -2,25 +2,37 @@ import * as THREE from 'three'
 import config from '../config'
 import './styles/main.scss'
 
-
+// object collection
 const MODEL_POOL = {}
+// global params
 const MAIN = {}
+MAIN.CANVAS_DOM_ID = 'mainCanvas'
+MAIN.CANVAS_WIDTH = window.innerWidth/1.5
+MAIN.CANVAS_HEIGHT = window.innerHeight/1.5
+MAIN.CAMERA_FOV = 75
+MAIN.CAMERA_ASPECT = window.innerWidth/window.innerHeight
+MAIN.CAMERA_NEAR = 0.1
+MAIN.CAMERA_FAR = 1000
+
+
+
 
 const scene = new THREE.Scene()
-const camera = new THREE.PerspectiveCamera(75, window.innerWidth/window.innerHeight, 0.1, 1000)
+const camera = new THREE.PerspectiveCamera(
+  MAIN.CAMERA_FOV, MAIN.CAMERA_ASPECT, MAIN.CAMERA_NEAR, MAIN.CAMERA_FAR)
 const renderer = new THREE.WebGLRenderer()
 const textureLoader = new THREE.TextureLoader()
-const canvasDom = document.getElementById('mainCanvas')
+const canvasDom = document.getElementById(MAIN.CANVAS_DOM_ID)
 
 const initialize = () => {
   // camera
   camera.position.z = 10
   // renderer
-  renderer.setSize(window.innerWidth/1.5, window.innerHeight/1.5)
-  renderer.setClearColor(0x3399ff)
+  renderer.setSize(MAIN.CANVAS_WIDTH, MAIN.CANVAS_HEIGHT)
+  renderer.setClearColor(0x3399FF)
   // model
   const geometry = new THREE.BoxGeometry(5, 5, 5)
-  const material = new THREE.MeshLambertMaterial({color: 0xf6546a})
+  const material = new THREE.MeshLambertMaterial({color: 0xF6546A})
   MODEL_POOL.box = new THREE.Mesh(geometry, material)
   // texture
   textureLoader.load("./static/images/box_texture.jpg", (texture) => {
@@ -29,7 +41,7 @@ const initialize = () => {
     scene.add(MODEL_POOL.box)
   })
   // light
-  const light = new THREE.PointLight(0xffffff, 1.2)
+  const light = new THREE.PointLight(0xFFFFFF, 1.2)
   light.position.set(0, 0, 5)
   scene.add(light)
   // canvas DOM
@@ -43,14 +55,14 @@ const render = () => {
 }
 
 const animate = () => {
-  MAIN.runningLoop = requestAnimationFrame(animate)
+  MAIN.RUNNING_LOOP = requestAnimationFrame(animate)
   render()
 }
 
 const reload = () => {
   console.log('Canceling the running loop...')
-  if (MAIN.runningLoop) {
-    cancelAnimationFrame(MAIN.runningLoop)
+  if (MAIN.RUNNING_LOOP) {
+    cancelAnimationFrame(MAIN.RUNNING_LOOP)
   }
 
   console.log('Removing all children...')
@@ -71,7 +83,7 @@ const reload = () => {
   }
 
   initialize()
-  MAIN.runningLoop = animate()
+  MAIN.RUNNING_LOOP = animate()
   console.log('Reload complete.')
 }
 
