@@ -3,7 +3,7 @@ import config from '../config'
 import './styles/main.scss'
 
 // object collection
-const MODEL_POOL = {}
+let MODEL_POOL = {}
 // global params
 const MAIN = {}
 MAIN.CANVAS_DOM_ID = 'mainCanvas'
@@ -13,9 +13,6 @@ MAIN.CAMERA_FOV = 75
 MAIN.CAMERA_ASPECT = window.innerWidth/window.innerHeight
 MAIN.CAMERA_NEAR = 0.1
 MAIN.CAMERA_FAR = 1000
-
-
-
 
 const scene = new THREE.Scene()
 const camera = new THREE.PerspectiveCamera(
@@ -77,6 +74,8 @@ const reload = () => {
       scene.remove(MODEL_POOL[key])
     })
   }
+
+  MODEL_POOL = {}
 
   if (canvasDom.childNodes[0]) {
     canvasDom.removeChild(canvasDom.childNodes[0])
