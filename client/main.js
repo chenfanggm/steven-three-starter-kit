@@ -1,3 +1,4 @@
+'use strict'
 import * as THREE from 'three'
 import config from '../config'
 import './styles/main.scss'
