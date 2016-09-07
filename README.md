@@ -6,8 +6,9 @@ This starter kit provide a convenient **hot-module-replace** nodejs server that 
 * Run command: ```npm install```
 
 # Run Server
+run following CMD in the repo root, then visit: http://localhost:3000
 ```
-npm run dev  // visit: http://localhost:3000
+npm run dev  
 ```
 # Start Coding
 Modify ***(your_repo_dir)/client/main.js*** while the server is running, and watch the hot-reloaded change ocuurs in browser: http://localhost:3000
