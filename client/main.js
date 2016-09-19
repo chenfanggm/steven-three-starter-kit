@@ -7,11 +7,8 @@ import './lib/OrbitAndPanControls.new'
 import _Coordinates from './lib/Coordinates'
 import config from '../config'
 import './styles/main.scss'
-import drawGoldCube from './components/drawGoldCube'
 import getBigBall from './components/getBigBall'
 import getSmallBall from './components/getSmallBall'
-import getPolygonGeometry from './components/getPolygonGeometry'
-
 
 // object collection
 let MODEL_POOL = {}
@@ -50,10 +47,8 @@ const init = () => {
   renderer.gammaOutput = true
   renderer.setSize(MAIN.CANVAS_WIDTH, MAIN.CANVAS_HEIGHT)
   renderer.setClearColor(MAIN.CANVAS_BG_COLOR, 1)
-
   // canvas DOM
   canvasDom.appendChild(renderer.domElement)
-
   // camera
   camera.position.set(20,20,70)
   // camera control
@@ -61,29 +56,33 @@ const init = () => {
 }
 
 const fillScene = () => {
-  // MAIN.SCENE
+  // scene
   MAIN.SCENE = new THREE.Scene()
-  MAIN.SCENE.fog = new THREE.Fog(0x808080, 2000, 4000)
+  const scene = MAIN.SCENE
+  scene.fog = new THREE.Fog(0x808080, 2000, 4000)
 
   // model
   MODEL_POOL.smallBall = getSmallBall()
   MODEL_POOL.bigBall = getBigBall()
-
   _.forEach(MODEL_POOL, (value) => {
-    MAIN.SCENE.add(value)
+    scene.add(value)
   })
 
   // light
-  //const light = new THREE.PointLight(0xFFFFFF, 1.2)
   const ambientLight = new THREE.AmbientLight(0xFFFFFF)
   ambientLight.position.set(100, 100, 100)
-  MAIN.SCENE.add(ambientLight)
+  scene.add(ambientLight)
 
   const directionalLight = new THREE.DirectionalLight(0xFFFFFF, 0.8);
   directionalLight.position.set(100, 100, 100 )
   directionalLight.target = MODEL_POOL.smallBall
-  MAIN.SCENE.add(directionalLight)
+  scene.add(directionalLight)
 
+  drawGrids()
+}
+
+
+const drawGrids = () => {
   // show grids
   const Coordinates = _Coordinates(MAIN.SCENE)
   if (MAIN.COORDINATES.ground) {
@@ -177,7 +176,7 @@ const reload = () => {
   setupGUI()
   fillScene()
   MAIN.RUNNING_LOOP = animate()
-  console.log('Reload complete.')
+  console.info('Reload complete.')
 }
 
 // Hot module replace setting
