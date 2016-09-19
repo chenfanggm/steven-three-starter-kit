@@ -28,8 +28,8 @@ MAIN.CAMERA_NEAR = 0.1
 MAIN.CAMERA_FAR = 4000
 MAIN.DEVICE_PIXEL_RATIO = window.devicePixelRatio || 1;
 MAIN.COORDINATES = {
-  gridX: true,
-  gridY: true,
+  gridX: false,
+  gridY: false,
   gridZ: true,
   axes: true,
   ground: false
@@ -55,7 +55,7 @@ const init = () => {
   canvasDom.appendChild(renderer.domElement)
 
   // camera
-  camera.position.set(50,50,50)
+  camera.position.set(20,20,70)
   // camera control
   cameraControls.target.set(0,0,0);
 }
@@ -99,7 +99,7 @@ const fillScene = () => {
     Coordinates.drawGrid({size:100, scale:0.1, orientation:"z"});
   }
   if (MAIN.COORDINATES.axes) {
-    Coordinates.drawAllAxes({axisLength:25, axisRadius:1, axisTess:50});
+    Coordinates.drawAllAxes({axisLength:25, axisRadius:0.2, axisTess:10});
   }
 }
 
