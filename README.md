@@ -21,7 +21,7 @@ Modify ***(your_repo_dir)/client/main.js*** while the server is running, and wat
 * http://threejs.org/
 
 # License
-Apache-2.0
+MIT
 
 # Author
 My name is [Chen Fang](https://chen-fang.com/), a humble Full-Stack Software Engineer.
