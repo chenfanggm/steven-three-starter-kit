@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<rss version="2.0">
+  <channel>
+    <title>Chen's Site</title>
+    <link>http://chenfang.me</link>
+    <description>Share my life and technology experiences to make the followers' life easier.</description>
+    <language>en-us,zh</language>
+    <pubDate>Sat, 06 Aug 2016 08:00:00 GMT</pubDate>
+    <lastBuildDate>Sat, 06 Aug 2016 08:00:00 GMT</lastBuildDate>
+    <managingEditor>chenfanggm@hotmail.com</managingEditor>
+    <webMaster>chenfanggm@hotmail.com</webMaster>
+    <item>
+      <title>About Me and The Site</title>
+      <link>http://chenfang.me/about-me-and-the-site</link>
+      <description>The ultimate goal of my life is to share my life and technology experiences to make the other's life easier.</description>
+      <pubDate>Sat, 06 Aug 2016 08:00:00 GMT</pubDate>
+      <guid>http://chenfang.me/about-me-and-the-site</guid>
+    </item>
+  </channel>
+</rss>
